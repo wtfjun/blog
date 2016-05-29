@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>blog</title>
+	<link rel="stylesheet/less" type="text/css" href="css/app.less">
+	<script src="js/less.min.js"></script>
+</head>
+<body style="background: #000;">
+	<div id="blog">
+		<header>
+			<img src="img/qx.jpg" alt="">
+		</header>
+
+		<div class="position">
+			<span>JunCi > Blog</span>
+			<p>--------------------</p>
+		</div>
+		<article>
+			
+			<div class="left">
+			  <% for(var i=0; i < blogs.length; i++) { %>
+				<div class="one-blog">
+					<div class="title"><a href="/showBlogPage?id=<%= blogs[i]._id %>"><%= blogs[i].title %></a></div>
+					<div class="time"><%= blogs[i].create_at.toLocaleDateString() %></div>
+					<div class="img"></div>
+					<div class="desc"><%= blogs[i].summary %></div>
+				</div>
+				<% } %>
+				<div class="fenye">
+					<a class="btn" href="/blog?p=1">第一页</a>
+		      <% for(var j=1; j<= Math.ceil(count/3); j++) { %>
+		        <% if(current_page == j) { %>
+		      <a class="btn" href="/blog?p=<%= j %>" style="background:#767676"><%= j %></a>
+		        <% } %>
+		        <% if(current_page != j) { %>
+		      <a class="btn" href="/blog?p=<%= j %>"><%= j %></a>
+		        <% } %>
+		       <% } %>
+		      <a class="btn" href="/blog?p=<%= Math.ceil(count/3) %>">最后一页</a>
+				</div>
+			</div>
+			<div class="right"></div>
+		</article>
+	</div>
+</body>
+</html>

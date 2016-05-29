@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>blog</title>
+	<link rel="stylesheet/less" type="text/css" href="css/app.less">
+	
+	<script src="js/less.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+</head>
+ 
+<body style="background: #000;">
+	<div id="blog">
+		<header>
+			<img src="img/qx.jpg" alt="">
+		</header>
+
+		<div class="position">
+			<span>JunCi > Blog > <%= blog.title %></span>
+			<p>--------------------</p>
+		</div>
+		<article>
+			
+			<div class="left">
+				<div class="one-blog">
+					<div class="title"><%= blog.title %></div>
+					<div class="time"><%= blog.create_at.toLocaleDateString() %></div>
+					<div id="desc" class="desc"><%- blog.desc %></div>
+				</div>
+				<div class="fenye">
+					<a href="" class="btn">上一页</a>
+					<a href="" class="btn">下一页</a>
+				</div>
+			</div>
+			<div class="right"></div>
+		</article>
+	</div>
+<script>
+
+//Html编码获取Html转义实体
+function htmlEncode(value){
+  return $('<div/>').text(value).html();
+}
+//Html解码获取Html实体
+function htmlDecode(value){
+  return $('<div/>').html(value).text();
+}
+var htmlDe=('<%= blog.desc %>');
+htmlDe = htmlDecode(htmlDe);
+
+$('#desc').append(htmlDe);
+
+</script>
+
+</body>
+</html>

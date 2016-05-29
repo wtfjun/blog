@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title><%= title %></title>
+<meta name="author" content="DeathGhost" />
+<link rel="stylesheet" type="text/css" href="/DeathGhost/css/style.css" />
+<style>
+body{height:100%;background:#16a085;overflow:hidden;}
+canvas{z-index:-1;position:absolute;}
+</style>
+<script src="/DeathGhost/js/jquery.js"></script>
+<script src="/DeathGhost/js/verificationNumbers.js"></script>
+<script src="/DeathGhost/js/Particleground.js"></script>
+<script>
+$(document).ready(function() {
+  //粒子背景特效
+  $('body').particleground({
+    dotColor: '#5cbdaa',
+    lineColor: '#5cbdaa'
+  });
+  //验证码
+  createCode();
+  
+});
+</script>
+</head>
+<body>
+<form action="/adminSigninAction" method="post">
+<dl class="admin_login">
+ <dt>
+  <strong>后台管理系统</strong>
+  <br>
+<!--   <em>Management System</em> -->
+ </dt>
+ <dd class="user_icon">
+  <input name="userName" type="text" placeholder="账号" class="login_txtbx"/>
+ </dd>
+ <dd class="pwd_icon">
+  <input name="password" type="password" placeholder="密码" class="login_txtbx"/>
+ </dd>
+
+ <br>
+ <dd>
+  <input type="submit" type="button" value="立即登陆" class="submit_btn"/>
+ </dd>
+ <dd>
+  
+  <p><%= err %></p>
+ 
+  <!-- <p>© 2015-2016 DeathGhost 版权所有</p>
+  <p>陕B2-20080224-1</p> -->
+ </dd>
+</dl>
+</form>
+</body>
+</html>

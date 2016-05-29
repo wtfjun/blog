@@ -1,0 +1,138 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "微软雅黑";
+}
+html, body {
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+li {
+	list-style-type: none;
+}
+
+@qianbai: #2C2C2C;
+.btn {
+	background: @qianbai;
+	width: 50px;
+	padding: 5px;
+	text-align: center;
+	color: #fff;
+}
+
+
+
+//index
+#index {
+	
+	>span {
+		display: block;
+		position: absolute;
+		width: 80px;
+		height: 80px;
+		border: 1px solid #2C2C2C;
+		text-align: center;
+		line-height: 80px;
+		a {
+			color: #fff;
+			display: block;
+		}
+	}
+	.left-top {
+		top: 50px;
+		left: 50px;
+	}
+	.right-top {
+    top: 50px;
+    right: 50px;
+	}
+	.right-bottom {
+    right: 50px;
+    bottom: 50px;
+	}
+	.left-bottom {
+		left: 50px;
+		bottom: 50px;
+	}
+}
+
+//blog
+.small-font {
+	font-size: 12px;
+}
+#blog {
+	a {
+		color: #fff;
+	}
+	color: #fff;
+	@er-color: #A7A7A7;
+	header {
+		position: relative;
+		height: 300px;
+		min-width: 1200px;
+		overflow: hidden;
+		>img {
+			position: absolute;
+			top: -300px;
+			right: 0px;
+		}
+	}
+
+	.position {
+		position: absolute;
+		top: 100px;
+		left: 100px;
+	}
+
+	article {
+		position: absolute;
+		top: 150px;
+		left: 100px;
+		width: 650px;
+		>.left {
+			.one-blog {
+				width: 650px;
+				border: 1px dashed #2C2C2C;
+				padding: 14px;
+				margin-top: 5px;
+				.time, .desc {
+					color: @er-color;
+					.small-font;
+					margin-top: 8px;
+				}
+      }
+		}
+		.fenye {
+			margin-top: 20px;
+			float: right;
+
+		}
+	}
+}
+
+//login 
+#signin, #signup {
+	padding: 50px 50px 20px 50px;
+	width: 180px;
+	text-align: center;
+	border: 1px solid @qianbai;
+	margin: 0 auto;
+	margin-top: 200px;
+	input {
+		padding: 5px;
+	}
+	.btn {
+		display: block;
+		margin-left: 100px;
+		margin-top: 24px;
+	}
+	span {
+		display: block;
+		margin-top: 18px;
+		color: @qianbai;
+	}
+}
